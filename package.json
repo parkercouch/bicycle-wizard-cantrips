@@ -1,0 +1,14 @@
+{
+  "name": "bicycle_wizard_cantrips",
+  "version": "0.0.1",
+  "description": "various helpers for lightspeed, etc",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"no tests yet\" && exit 1"
+  },
+  "author": "parker couch",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.0.269"
+  }
+}

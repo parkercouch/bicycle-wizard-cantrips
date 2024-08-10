@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "bicycle wizard cantrips",
+  "description": "various helpers for lightspeed, etc",
+  "version": "0.0.1",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "icons": {
+    "16": "assets/wizard_16.png",
+    "32": "assets/wizard_32.png",
+    "48": "assets/wizard_48.png",
+    "128": "assets/wizard_128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://us.merchantos.com/?name=workbench.views.*"],
+      "run_at": "document_idle",
+      "js": ["scripts/workorder.js"]
+    }
+  ]
+}
