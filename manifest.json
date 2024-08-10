@@ -3,7 +3,7 @@
   "name": "bicycle wizard cantrips",
   "description": "various helpers for lightspeed, etc",
   "version": "0.0.1",
-  "permissions": ["activeTab", "scripting", "storage"],
+  "permissions": ["storage"],
   "icons": {
     "16": "assets/wizard_16.png",
     "32": "assets/wizard_32.png",
