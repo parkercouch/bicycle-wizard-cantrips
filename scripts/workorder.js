@@ -5,6 +5,7 @@
   }
 
   inject_toggle_internal_notes_button();
+  inject_simple_ui_toggle_button();
   format_notes_boxes();
   copy_workorder_info_to_topbar();
 })();
@@ -20,7 +21,7 @@ function inject_toggle_internal_notes_button() {
     </button>
   `;
   toggle_internal_notes_button.onclick = function () {
-    internal_notes_container.style.display = internal_notes_container.style.display === "none" ? null : "none";
+    toggle_display(internal_notes_container);
   };
 
   workorder_dates_row.append(toggle_internal_notes_button);
@@ -53,4 +54,34 @@ function copy_workorder_info_to_topbar() {
   `;
 
   topbar.appendChild(topbar_info_container);
+}
+
+function inject_simple_ui_toggle_button() {
+  const topbar = document.querySelector("#wrapper > div.js-topbar > div");
+  const topbar_toggler = document.querySelector("#wrapper > div.js-topbar > div > div:nth-child(1)");
+  const topbar_breadcrumbs = document.querySelector("#wrapper > div.js-topbar > div > div.cr-topbar__breadcrumbs");
+
+  const customer_info = document.querySelector("div.workorder-customer");
+  const bike_description_row = document.querySelector("#workorder_status_wrapper > fieldset:nth-child(3)");
+  const employee_row = document.querySelector("#workorder_status_wrapper > fieldset.workorder-employee");
+  const button_row = document.querySelector("#view > div > div.functions");
+
+  const toggle_simple_ui_button = topbar_toggler.cloneNode();
+  toggle_simple_ui_button.innerHTML = `
+    <button type="button" style="">
+      <span style="display: block;">UI</span>
+    </button>
+  `;
+  toggle_simple_ui_button.onclick = function () {
+    toggle_display(customer_info);
+    toggle_display(bike_description_row);
+    toggle_display(employee_row);
+    toggle_display(button_row);
+  };
+
+  topbar.insertBefore(toggle_simple_ui_button, topbar_breadcrumbs);
+}
+
+function toggle_display(element) {
+  element.style.display = element.style.display === "none" ? null : "none";
 }
