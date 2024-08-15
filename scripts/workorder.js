@@ -6,6 +6,7 @@
 
   inject_toggle_internal_notes_button();
   format_notes_boxes();
+  copy_workorder_info_to_topbar();
 })();
 
 function inject_toggle_internal_notes_button() {
@@ -36,4 +37,20 @@ function format_notes_boxes() {
     notes_boxes[i].style.setProperty("width", "-webkit-fill-available");
   }
   note_text_area.style.setProperty("height", "15rem");
+}
+
+function copy_workorder_info_to_topbar() {
+  const topbar_breadcrumbs = document.querySelector("#wrapper > div.js-topbar > div > div.cr-topbar__breadcrumbs");
+  const topbar = document.querySelector("#wrapper > div.js-topbar > div");
+
+  const bike_description = document.querySelector("#serial_description").value;
+  const bike_color = document.querySelector("#serial_color").value;
+  const bike_size = document.querySelector("#serial_size").value;
+
+  const topbar_info_container = topbar_breadcrumbs.cloneNode();
+  topbar_info_container.innerHTML = `
+    <p>${bike_description}: ${bike_color}, ${bike_size}</p>
+  `;
+
+  topbar.appendChild(topbar_info_container);
 }
