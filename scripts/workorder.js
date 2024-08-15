@@ -4,6 +4,11 @@
     return;
   }
 
+  inject_toggle_internal_notes_button();
+  format_notes_boxes();
+})();
+
+function inject_toggle_internal_notes_button() {
   const internal_notes_container = document.querySelector("#workorder_status_wrapper > div.view_field_box > div:nth-child(2)");
   const workorder_dates_row = document.querySelector("#workorder_status_wrapper > fieldset.workorder-dates");
 
@@ -18,7 +23,9 @@
   };
 
   workorder_dates_row.append(toggle_internal_notes_button);
+}
 
+function format_notes_boxes() {
   const notes_container = document.querySelector("div.view_field_box:has(label[for=note])");
   const notes_boxes = document.querySelectorAll("#workorder_status_wrapper > div.view_field_box > *");
   const note_text_area = document.querySelector("#noteTextArea");
@@ -29,4 +36,4 @@
     notes_boxes[i].style.setProperty("width", "-webkit-fill-available");
   }
   note_text_area.style.setProperty("height", "15rem");
-})();
+}
