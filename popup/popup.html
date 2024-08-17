@@ -2,6 +2,15 @@
   <body style="height: 10rem; width: 20rem">
     <h1>Bicycle Wizard Cantrips</h1>
     <button id="toggle_lightspeed_button">toggle lightspeed modifications</button>
+    <form id="settings" class="settings-form">
+      <div class="settings-form">
+        <label for="account-number">Account #:</label>
+        <input type="text" name="account-number" id="account-number" required />
+      </div>
+      <div class="settings-form">
+        <input type="submit" value="Update" />
+      </div>
+    </form>
     <script src="popup.js"></script>
   </body>
 </html>

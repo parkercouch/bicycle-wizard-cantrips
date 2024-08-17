@@ -21,6 +21,11 @@
       "matches": ["https://us.merchantos.com/?name=workbench.views.*"],
       "run_at": "document_idle",
       "js": ["scripts/workorder.js"]
+    },
+    {
+      "matches": ["https://us.merchantos.com/?name=workbench.listings.workorders_agenda*"],
+      "run_at": "document_idle",
+      "js": ["scripts/schedule.js"]
     }
   ]
 }
