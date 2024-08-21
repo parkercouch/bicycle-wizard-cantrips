@@ -87,6 +87,7 @@ function inject_ui_toggle_buttons() {
   const button_row = document.querySelector("#view > div > div.functions");
   const workorder_dates_row = document.querySelector("#workorder_status_wrapper > fieldset.workorder-dates");
   const internal_notes_container = document.querySelector("#workorder_status_wrapper > div.view_field_box > div:nth-child(2)");
+  const workorder_pagination = document.querySelector("nav.records");
 
   const toggle_buttons = topbar_toggler.cloneNode();
   toggle_buttons.style.setProperty("width", "2rem");
@@ -112,6 +113,7 @@ function inject_ui_toggle_buttons() {
     toggle_display(employee_row);
     toggle_display(button_row);
     toggle_display(workorder_dates_row);
+    toggle_display(workorder_pagination);
 
     toggle_display(topbar);
     page_wrapper.style["padding-top"] = page_wrapper.style["padding-top"] === "0px" ? "54px" : "0px";

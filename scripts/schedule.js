@@ -1,5 +1,5 @@
 (async () => {
-  const current_state = await chrome.storage.local.get(["lightspeed_module_enabled", "lightspeed_account_number"]);
+  const current_state = await chrome.storage.local.get(["lightspeed_module_enabled"]);
   if (!current_state.lightspeed_module_enabled) {
     return;
   }
