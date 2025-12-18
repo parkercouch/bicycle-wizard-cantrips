@@ -1,9 +1,4 @@
 (async () => {
-  const current_state = await chrome.storage.local.get(["lightspeed_module_enabled"]);
-  if (!current_state.lightspeed_module_enabled) {
-    return;
-  }
-
   format_notes_boxes();
   inject_snippets_buttons();
 })();

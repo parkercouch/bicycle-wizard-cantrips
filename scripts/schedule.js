@@ -1,9 +1,4 @@
 (async () => {
-  const current_state = await chrome.storage.local.get(["lightspeed_module_enabled"]);
-  if (!current_state.lightspeed_module_enabled) {
-    return;
-  }
-
   const synced_settings = await chrome.storage.sync.get(["lightspeed_account_number"]);
   if (synced_settings.lightspeed_account_number == undefined) {
     return;
