@@ -17,6 +17,7 @@ chrome.tabs.onUpdated.addListener(async function on_url_update(tabId, changeInfo
   }
 
   if (changeInfo.url.includes("us.merchantos.com/?name=workbench.views")) {
+    await timeout(1000);
     await chrome.scripting.executeScript(
       {
         target: { tabId: tabId },
@@ -27,6 +28,7 @@ chrome.tabs.onUpdated.addListener(async function on_url_update(tabId, changeInfo
   }
 
   if (changeInfo.url.includes("us.merchantos.com/?name=workbench.listings.workorders_agenda")) {
+    await timeout(1000);
     await chrome.scripting.executeScript(
       {
         target: { tabId: tabId },
@@ -36,3 +38,9 @@ chrome.tabs.onUpdated.addListener(async function on_url_update(tabId, changeInfo
     return;
   }
 });
+
+function timeout(duration) {
+  return new Promise(resolve => {
+    setTimeout(resolve, duration);
+  });
+}
