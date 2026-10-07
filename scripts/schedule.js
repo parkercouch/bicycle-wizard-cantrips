@@ -12,7 +12,7 @@ function inject_print_tag_buttons(account_number) {
 
   while (!!document.getElementById(`listing_r_${list_id}`)) {
     const edit_workorder_button = document.querySelector(`#listing_r_${list_id} > td.lf > a`);
-    const workorder_number = document.querySelector(`#cellWorkordersDueID_${list_id}`).textContent.trim();
+    const workorder_number = document.querySelector(`#cellWorkOrdersDueID_${list_id}`).textContent.trim();
 
     const print_button = edit_workorder_button.cloneNode();
     print_button.removeAttribute("onclick");
